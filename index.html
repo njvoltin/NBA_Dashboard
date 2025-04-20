@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NBA Player Stats</title>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+<body>
+  <h1>2024-25 NBA Player Stats Dashboard</h1>
+
+  <div id="dashboard-grid">
+    <div id="team-select-container" class="grid-item logo-area">
+        <img src="/Images/a-slam-dunk-of-color-the-vibrant-basketball-png.webp" alt="NBA Logo" class="background-logo">
+        <div class="dropdown-wrapper">
+          <label for="team-select">Select a Team:</label><br>
+          <select id="team-select">
+            <option value="">Select a team</option>
+          </select>
+        </div>
+    </div>
+      
+  
+    <div id="team-chart-container" class="grid-item">
+        <div class="chart-container">
+          <canvas id="team-rank-chart"></canvas>
+        </div>
+    </div>
+  
+    <div class="grid-item" id="player-selector">
+      <label for="player-select">Select a Player:</label><br>
+      <select id="player-select" disabled>
+        <option value="">Select a player</option>
+      </select>
+      <div id="player-visuals"></div>
+    </div>
+  
+    <div class="grid-item" id="player-chart-container">
+        <canvas id="player-stat-chart" width="300" height="300"></canvas>
+      
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script> <!-- load chart.js first -->
+    <script src="chart1.js"></script>
+    <script src="logic1.js"></script> <!-- then load logic1.js -->
+</body>
+</html>

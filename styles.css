@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 2rem;
+  background: #0a2342; /* Deep navy */
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #e0e0e0;
+}
+
+select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #0a2342;
+  font-weight: bold;
+  transition: border 0.3s ease;
+}
+
+select:hover {
+  border-color: #c8102e;
+}
+
+#dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  height: 80vh;
+}
+
+/* Each quadrant */
+.grid-item {
+    background: transparent;
+    color: #c8102e; 
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* softer shadow for a subtle effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    animation: fadeIn 0.5s ease;
+  }
+
+/* Team and player selectors */
+#team-selector,
+#player-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Canvas charts */
+#team-chart-container canvas,
+#player-chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#player-visuals {
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Hover effect */
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  #dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
+/* Charts */
+canvas {
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.chart-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* Logo and dropdown overlap setup */
+.logo-area {
+    position: relative;
+    overflow: hidden;
+    background: transparent; /* Remove white background */
+    padding: 0; /* Remove default padding */ position: relative;
+    overflow: hidden;
+    background: transparent; /* Remove white background */
+    padding: 0; /* Remove default padding */
+}
+
+.background-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.dropdown-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    background-color: transparent; /* Remove white background */
+    border-radius: 0; /* Optional: flatten corners if you want */
+}
+
+/* Player info text styling */
+#player-visuals p {
+    margin: 0.4rem 0;
+  }
+  
+  #player-visuals strong {
+    color: #c8102e;
+  }
+  
+  /* Better select dropdown look */
+  select:focus {
+    outline: none;
+    border-color: #c8102e;
+    box-shadow: 0 0 5px rgba(200, 16, 46, 0.5);
+  }
+  
+  /* Header underline */
+  h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #c8102e;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+  
+  /* Subtle background texture */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-image: radial-gradient(#ffffff11 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+  }
+
+  #player-selector {
+    background-color: #0a2342;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 1;
+  }
