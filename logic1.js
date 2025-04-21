@@ -6,8 +6,8 @@ let playersData = [];
 let teamData = [];
 
 Promise.all([
-  fetch('player.json').then(res => res.json()),
-  fetch('team.json').then(res => res.json())
+  fetch('./player.json').then(res => res.json()),
+  fetch('./team.json').then(res => res.json())
 ]).then(([players, teams]) => {
   playersData = players;
   teamData = teams;
@@ -85,3 +85,5 @@ playerSelect.addEventListener('change', () => {
       }
     }
   });
+
+  // Minor change to trigger Git
